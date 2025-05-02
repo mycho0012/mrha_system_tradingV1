@@ -9,8 +9,8 @@ import time
 import os
 from dotenv import load_dotenv
 
-# config 폴더의 .env 파일 로드
-load_dotenv(os.path.join('config', '.env'))
+#  .env 파일 로드
+load_dotenv()
 
 # API 키 가져오기
 UPBIT_ACCESS_KEY = os.getenv('UPBIT_ACCESS_KEY')
@@ -18,11 +18,11 @@ UPBIT_SECRET_KEY = os.getenv('UPBIT_SECRET_KEY')
 
 # API 키가 없으면 에러 메시지 표시
 if not UPBIT_ACCESS_KEY or not UPBIT_SECRET_KEY:
-    st.error("API keys not found in config/.env file. Please check your configuration.")
+    st.error("API keys not found in .env file. Please check your configuration.")
     st.stop()
 
 # 페이지 설정
-st.set_page_config(page_title="MRHA Trading System", layout="wide")
+st.set_page_config(page_title="피보나치를 이용한 트레이딩 시스템", layout="wide")
 
 # MRHA 봇 실행을 위한 함수 (캐시 비활성화)
 def run_mrha_bot(ticker, interval):
